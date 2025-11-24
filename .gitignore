@@ -1,0 +1,25 @@
+# Node dependencies
+frontend/node_modules
+backend/node_modules
+
+# Build outputs
+frontend/.next
+frontend/out/
+frontend/build
+backend/dist
+backend/build
+
+# Environment files
+*.env
+frontend/next-env.d.ts
+backend/.env
+
+# OS / IDE junk
+.DS_Store
+Thumbs.db
+
+Developer guide.docx
+Explanation in simple words.docx
+imp info.txt
+testing assets/
+backend/test.jpg
