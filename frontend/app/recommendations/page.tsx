@@ -131,7 +131,7 @@ export default function RecommendationsPage() {
         setRecommendations(response.recommendations)
       }
     } catch (error) {
-      console.error("[v0] Recommendation error:", error)
+      console.error("Recommendation error:", error)
       setError(error instanceof Error ? error.message : "Failed to get recommendations. Please try again.")
     } finally {
       setIsLoading(false)
@@ -148,7 +148,7 @@ export default function RecommendationsPage() {
     try {
       await analyticsAPI.logEvent(open ? "example_poses_opened" : "example_poses_closed")
     } catch (e) {
-      console.error("[v0] analytics log failed:", e)
+      console.error("analytics log failed:", e)
     }
   }
 

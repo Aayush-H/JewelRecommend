@@ -111,7 +111,7 @@ export function AddProductModal({ isOpen, onClose, onAdd, onSuccess }: AddProduc
 
       onClose()
     } catch (error) {
-      console.error("[v0] Failed to create product:", error)
+      console.error("Failed to create product:", error)
       setError(error instanceof Error ? error.message : "Failed to create product. Please try again.")
     } finally {
       setIsLoading(false)

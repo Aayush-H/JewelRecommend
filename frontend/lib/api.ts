@@ -1,6 +1,6 @@
 // API utility layer for backend communication
 
-export const API_URL = "https://jewelrecback.onrender.com" 
+export const API_URL = "https://jewelrecommend.onrender.com" 
 //export const API_URL = "http://localhost:5000"
 
 // Helper function to get auth token

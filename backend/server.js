@@ -13,8 +13,6 @@ import productRoutes from "./routes/products.js"
 import recommendationRoutes from "./routes/recommendations.js"
 import designerRoutes from "./routes/designers.js"
 
-
-
 const app = express()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

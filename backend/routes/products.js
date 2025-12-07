@@ -93,7 +93,7 @@ router.post("/", authenticateToken, upload.single("image"), async (req, res) => 
     const { name, description, price, category, subcategory, materials, occasions, style, colors, gender, link } =
       req.body
 
-    console.log("[v0] 📝 Product form data received:", {
+    console.log("📝 Product form data received:", {
       name,
       description,
       price,
@@ -115,7 +115,7 @@ router.post("/", authenticateToken, upload.single("image"), async (req, res) => 
     let uploadedImage // hold uploaded image meta for DB
     if (req.file?.buffer) {
       const result = await uploadBufferToCloudinary(req.file.buffer, { folder: "products" })
-      console.log("[v0] ☁️ Uploaded to Cloudinary:", result.secure_url)
+      console.log("☁️ Uploaded to Cloudinary:", result.secure_url)
       uploadedImage = {
         url: result.secure_url,
         filename: result.original_filename || result.public_id,
@@ -226,7 +226,7 @@ router.post("/", authenticateToken, upload.single("image"), async (req, res) => 
       }
     }
 
-    console.log("[v0] 🔄 Processed data:", {
+    console.log("🔄 Processed data:", {
       occasions: processedOccasions,
       styles: processedStyles,
       materials: processedMaterials,
@@ -251,10 +251,10 @@ router.post("/", authenticateToken, upload.single("image"), async (req, res) => 
     })
 
     await product.save()
-    console.log("[v0] ✅ Product created successfully:", product.name)
+    console.log("✅ Product created successfully:", product.name)
     res.status(201).json({ message: "Product created successfully", product })
   } catch (error) {
-    console.error("[v0] ❌ Product creation error:", error)
+    console.error("❌ Product creation error:", error)
     res.status(500).json({ message: "Failed to create product", error: error.message })
   }
 })
@@ -293,7 +293,7 @@ router.put("/:id", authenticateToken, upload.single("image"), async (req, res) =
 
     if (req.file?.buffer) {
       const result = await uploadBufferToCloudinary(req.file.buffer, { folder: "products" })
-      console.log("[v0] ☁️ Updated image to Cloudinary:", result.secure_url)
+      console.log("☁️ Updated image to Cloudinary:", result.secure_url)
       updateOps.$push = {
         images: {
           url: result.secure_url,

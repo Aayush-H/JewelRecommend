@@ -36,7 +36,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(userData)
       localStorage.setItem("user", JSON.stringify(userData))
     } catch (error) {
-      console.error("[v0] Login error:", error)
+      console.error("Login error:", error)
       throw error
     } finally {
       setIsLoading(false)
@@ -51,7 +51,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(userData)
       localStorage.setItem("user", JSON.stringify(userData))
     } catch (error) {
-      console.error("[v0] Signup error:", error)
+      console.error("Signup error:", error)
       throw error
     } finally {
       setIsLoading(false)

@@ -61,7 +61,7 @@ export default function DesignerDashboard() {
       const response = await productsAPI.getAll({ designer: user?.id })
       setProducts(response.products || [])
     } catch (error) {
-      console.error("[v0] Failed to fetch products:", error)
+      console.error("Failed to fetch products:", error)
       setError(error instanceof Error ? error.message : "Failed to load products")
     } finally {
       setIsLoading(false)
@@ -82,7 +82,7 @@ export default function DesignerDashboard() {
       await productsAPI.delete(productId)
       setProducts((prev) => prev.filter((p) => p._id !== productId))
     } catch (error) {
-      console.error("[v0] Failed to delete product:", error)
+      console.error("Failed to delete product:", error)
       setError(error instanceof Error ? error.message : "Failed to delete product")
     }
   }
